@@ -1,3 +1,12 @@
+// Use the globally initialized supabase client
+const { supabase } = window;
+
+// Verify it's working
+console.log("App supabase instance:", supabase);
+if (!supabase) {
+  throw new Error("Supabase client not initialized!");
+}
+
 console.log("Testing Supabase connection...");
 supabase.auth.getSession().then(console.log).catch(console.error);
 const { createRoot } = ReactDOM;
