@@ -4,17 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Employee Portal</title>
+  <!-- Load Supabase first -->
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <!-- Then load React -->
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Load React Router as module -->
   <script type="module" crossorigin src="https://unpkg.com/react-router-dom@6/dist/react-router-dom.production.min.js"></script>
+  <!-- Other dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
   <div id="root"></div>
   
+  <!-- Initialize Supabase before app code -->
+  <script>
+    // Initialize Supabase first
+    window.supabase = supabase.createClient(
+      'YOUR_SUPABASE_URL',
+      'YOUR_SUPABASE_ANON_KEY'
+    );
+    
+    // Test connection
+    console.log("Supabase initialized:", window.supabase);
+    supabase.auth.getSession()
+      .then(({ data }) => console.log("Session:", data.session))
+      .catch(error => console.error("Auth error:", error));
+  </script>
+  
+  <!-- Then load your app -->
   <script type="text/babel" data-type="module" src="app.jsx"></script>
 </body>
 </html>
