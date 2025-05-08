@@ -1,3 +1,5 @@
+console.log("Testing Supabase connection...");
+supabase.auth.getSession().then(console.log).catch(console.error);
 const { createRoot } = ReactDOM;
 const { useState, useEffect, useRef } = React;
 const { BrowserRouter, Routes, Route, Link, useNavigate, Outlet } = ReactRouterDOM;
