@@ -1,8 +1,8 @@
 const { createRoot } = ReactDOM;
 const { useState, useEffect, useRef } = React;
 const { BrowserRouter, Routes, Route, Link, useNavigate, Outlet } = ReactRouterDOM;
-const supabaseUrl = 'YOUR_SUPABASE_URL';
-const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
+const supabaseUrl = 'https://aoxwtvxavuddykkmlela.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFveHd0dnhhdnVkZHlra21sZWxhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0OTY0OTgsImV4cCI6MjA2MjA3MjQ5OH0.SXng4P6mo36mMOG1lwoTXjZ4e-p9kfNwzTnqlU2uFUo';
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 // Navbar Component
